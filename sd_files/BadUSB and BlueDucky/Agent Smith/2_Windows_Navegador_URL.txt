@@ -1,0 +1,10 @@
+REM Agent Smith - DEMO autorizada (Windows)
+REM Abre o navegador padrao numa URL de teste neutra. Inofensivo.
+REM Troque a URL abaixo pela que quiser usar no seu teste.
+DEFINE #URL https://example.com
+DELAY 1000
+GUI r
+DELAY 600
+STRINGLN #URL
+DELAY 800
+ENTER

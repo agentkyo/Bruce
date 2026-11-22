@@ -1,0 +1,4 @@
+REM Agent Smith - DEMO autorizada (Windows)
+REM Bloqueia a tela (Win+L). Demonstra controle sem causar dano.
+DELAY 1000
+GUI l

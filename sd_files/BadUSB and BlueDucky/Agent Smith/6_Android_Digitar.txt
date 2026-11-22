@@ -1,0 +1,6 @@
+REM Agent Smith - DEMO autorizada (Android, via USB-OTG ou Bad BLE)
+REM Digita um texto no campo que estiver em foco (ex.: um bloco de notas
+REM ja aberto). Android aceita teclado HID externo. Inofensivo.
+DELAY 1200
+STRINGLN AGENT SMITH - teste autorizado de BadUSB
+STRINGLN Dispositivo aceitou um teclado externo via HID.

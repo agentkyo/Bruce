@@ -1,0 +1,52 @@
+=================================================================
+  AGENT SMITH - Scripts BadUSB (DuckyScript 3.0)
+=================================================================
+
+AVISO LEGAL / USO AUTORIZADO
+----------------------------
+Estes scripts simulam um teclado USB (ataque "BadUSB"/Rubber Ducky).
+Use SOMENTE em computadores que sao SEUS ou com PERMISSAO EXPLICITA
+do dono. Usar em maquinas de terceiros sem autorizacao e CRIME.
+Voce e o unico responsavel pelo uso.
+
+Estes exemplos sao DEMONSTRACOES educacionais e inofensivas:
+abrem um app e digitam um texto de teste, abrem uma URL, ou
+bloqueiam a tela. Nao roubam dados, nao instalam nada, nao abrem
+shells. Servem para mostrar o risco de portas USB destravadas.
+
+COMO USAR NO AGENT SMITH
+------------------------
+1. Copie esta pasta inteira para o cartao microSD (ja vem no SD).
+2. No aparelho: menu "Outros" -> "BadUSB" (ou "Bad BLE" para via
+   Bluetooth) -> navegue ate esta pasta -> escolha o script .txt.
+3. Conecte o Cardputer na maquina alvo pelo cabo USB.
+4. Confirme a execucao no aparelho. O script "digita" sozinho.
+
+DICA DE EXECUCAO RAPIDA
+-----------------------
+Deixe o script que voce mais usa com um nome que comece por "1_"
+para ele aparecer no topo da lista. Para rodar assim que conectar,
+selecione o script ANTES de plugar e confirme logo apos conectar.
+
+SINTAXE BASICA (DuckyScript 3.0)
+--------------------------------
+REM texto           -> comentario (ignorado)
+DEFINE #NOME valor  -> constante substituida antes de rodar
+DELAY 500           -> espera 500 ms
+STRING texto        -> digita o texto (sem Enter)
+STRINGLN texto      -> digita o texto e aperta Enter
+ENTER / TAB / ESC   -> tecla especial
+GUI r               -> tecla Windows + R (GUI = Win/Cmd/Super)
+CTRL ALT t          -> combinacao de teclas
+REPEAT n            -> repete a ultima linha n vezes
+
+ARQUIVOS NESTA PASTA
+--------------------
+1_Windows_Bloco_de_Notas.txt  - abre o Bloco de Notas e digita um banner
+2_Windows_Navegador_URL.txt   - abre o navegador numa URL de teste
+3_Windows_Bloquear_Tela.txt   - bloqueia a tela (Win+L)
+4_Linux_Terminal.txt          - abre um terminal e imprime uma mensagem
+5_macOS_TextEdit.txt          - abre o TextEdit via Spotlight e digita
+6_Android_Digitar.txt         - digita um texto no campo em foco (via OTG)
+7_iOS_Digitar.txt             - digita um texto no campo em foco
+=================================================================

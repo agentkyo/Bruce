@@ -1,0 +1,9 @@
+REM Agent Smith - DEMO autorizada (macOS)
+REM Abre o TextEdit pelo Spotlight e digita um banner. Inofensivo.
+DELAY 1000
+GUI SPACE
+DELAY 700
+STRINGLN TextEdit
+DELAY 1500
+STRINGLN AGENT SMITH - teste autorizado de BadUSB
+STRINGLN Porta USB destravada aceitou um teclado externo.

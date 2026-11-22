@@ -1,0 +1,13 @@
+REM Agent Smith - DEMO autorizada (Windows)
+REM Abre o Bloco de Notas e digita um banner de teste. Inofensivo.
+DEFINE #PAUSE 600
+DELAY 1000
+GUI r
+DELAY #PAUSE
+STRINGLN notepad.exe
+DELAY 1200
+STRINGLN =============================================
+STRINGLN  AGENT SMITH - teste autorizado de BadUSB
+STRINGLN  Se voce esta vendo isso, uma porta USB
+STRINGLN  destravada aceitou um "teclado" externo.
+STRINGLN =============================================

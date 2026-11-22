@@ -1,0 +1,6 @@
+REM Agent Smith - DEMO autorizada (iOS/iPadOS)
+REM iOS aceita teclado externo (HID). Com um campo de texto em foco
+REM (ex.: app Notas aberto), este script digita um banner. Inofensivo.
+DELAY 1200
+STRINGLN AGENT SMITH - teste autorizado de BadUSB
+STRINGLN iOS aceitou um teclado externo via HID.
