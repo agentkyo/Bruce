@@ -53,40 +53,40 @@ void WifiMenu::optionsMenu() {
     // User can navigate menu normally even with WebUI active
     if (!WiFi.isConnected() && !WiFi.AP.started()) {
         options = {
-            {"Connect to Wifi", lambdaHelper(wifiConnectMenu, WIFI_STA)},
-            {"Start WiFi AP", [=]() {
+            {"Conectar ao WiFi", lambdaHelper(wifiConnectMenu, WIFI_STA)},
+            {"Criar AP WiFi", [=]() {
                  wifiConnectMenu(WIFI_AP);
                  displayInfo("pwd: " + bruceConfig.wifiAp.pwd, true);
              }},
         };
     }
-    if (WiFi.getMode() != WIFI_MODE_NULL) { options.push_back({"Turn Off WiFi", wifiDisconnect}); }
+    if (WiFi.getMode() != WIFI_MODE_NULL) { options.push_back({"Desligar WiFi", wifiDisconnect}); }
     if (WiFi.getMode() & WIFI_MODE_STA && WiFi.isConnected()) {
-        options.push_back({"AP info", displayAPInfo});
+        options.push_back({"Info do AP", displayAPInfo});
     }
-    options.push_back({"Wifi Atks", wifi_atk_menu});
+    options.push_back({"Ataques WiFi", wifi_atk_menu});
     options.push_back({"Evil Portal", [=]() {
                            // WebUI cleanup now handled automatically inside EvilPortal constructor
                            EvilPortal();
                        }});
     options.push_back({"NetCut", [=]() { netcutMenu(); }});
-    // options.push_back({"ReverseShell", [=]()       { ReverseShell(); }});
+    // options.push_back({"Shell Reverso", [=]()       { ReverseShell(); }});
 #ifndef LITE_VERSION
-    options.push_back({"Listen TCP", listenTcpPort});
-    options.push_back({"Client TCP", clientTCP});
-    options.push_back({"SOCKS4 Proxy", []() { socks4Proxy(1080); }});
+    options.push_back({"Escutar TCP", listenTcpPort});
+    options.push_back({"Cliente TCP", clientTCP});
+    options.push_back({"Proxy SOCKS4", []() { socks4Proxy(1080); }});
     options.push_back({"TelNET", telnet_setup});
     options.push_back({"SSH", lambdaHelper(ssh_setup, String(""))});
     options.push_back({"Sniffer", sniffer_setup});
-    options.push_back({"Channel Analyzer", channel_analyzer_setup});
+    options.push_back({"Analise de Canais", channel_analyzer_setup});
 #if defined(CONFIG_IDF_TARGET_ESP32C5)
-    options.push_back({"Dual Band Analyzer", dual_band_analyzer_setup});
+    options.push_back({"Analise Dual Band", dual_band_analyzer_setup});
 #endif
-    options.push_back({"Jam Detect", jam_detect_setup});
+    options.push_back({"Detectar Jammer", jam_detect_setup});
 #if defined(CONFIG_IDF_TARGET_ESP32S3) && !defined(BRUCE_NO_SDR_JAMMER)
     options.push_back({"SDR", sdr_menu});
 #endif
-    options.push_back({"Scan Hosts", [=]() {
+    options.push_back({"Escanear Hosts", [=]() {
                            bool doScan = true;
                            if (!WiFi.isConnected()) doScan = wifiConnectMenu();
 
@@ -106,7 +106,7 @@ void WifiMenu::optionsMenu() {
 #if defined(CONFIG_IDF_TARGET_ESP32S3)
     options.push_back({"WiFite", wifite_menu});
 #endif
-    options.push_back({"WiFi Pass Recovery", wifi_recover_menu});
+    options.push_back({"Recuperar Senha", wifi_recover_menu});
 #endif
 
     options.push_back({"Config", [this]() { configMenu(); }});
@@ -121,7 +121,7 @@ void WifiMenu::optionsMenu() {
 void WifiMenu::configMenu() {
     std::vector<Option> wifiOptions;
 
-    wifiOptions.push_back({"Change MAC", wifiMACMenu});
+    wifiOptions.push_back({"Trocar MAC", wifiMACMenu});
     wifiOptions.push_back({"Add Evil Wifi", addEvilWifiMenu});
     wifiOptions.push_back({"Remove Evil Wifi", removeEvilWifiMenu});
     wifiOptions.push_back({bruceConfig.TerminalLog ? "SSH/Telnet Log OFF" : "SSH/Telnet Log ON", [this]() {

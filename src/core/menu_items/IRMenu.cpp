@@ -16,12 +16,12 @@ void IRMenu::optionsMenu() {
 #endif
     options = {
         {"TV-B-Gone", StartTvBGone              },
-        {"Custom IR", otherIRcodes              },
-        {"IR Read",   [=]() { IrRead(); }       },
+        {"IR Personalizado", otherIRcodes              },
+        {"Ler IR",   [=]() { IrRead(); }       },
 #if !defined(LITE_VERSION)
         {"IR Jammer", startIrJammer             }, // Simple frequency-adjustable jammer
 #endif
-        {"Config",    [this]() { configMenu(); }},
+        {"Ajustes",    [this]() { configMenu(); }},
     };
     addOptionToMainMenu();
 
@@ -36,10 +36,10 @@ void IRMenu::optionsMenu() {
 
 void IRMenu::configMenu() {
     options = {
-        {"Ir TX Pin", lambdaHelper(gsetIrTxPin, true)},
-        {"Ir RX Pin", lambdaHelper(gsetIrRxPin, true)},
-        {"Ir TX Repeats", setIrTxRepeats},
-        {"Back", [this]() { optionsMenu(); }},
+        {"Pino TX IR", lambdaHelper(gsetIrTxPin, true)},
+        {"Pino RX IR", lambdaHelper(gsetIrRxPin, true)},
+        {"Repeticoes TX", setIrTxRepeats},
+        {"Voltar", [this]() { optionsMenu(); }},
     };
 
     loopOptions(options, MENU_TYPE_SUBMENU, "IR Config");

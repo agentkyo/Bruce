@@ -5,7 +5,7 @@
 
 class IRMenu : public MenuItemInterface {
 public:
-    IRMenu() : MenuItemInterface("IR") {}
+    IRMenu() : MenuItemInterface("Infra") {}
 
     void optionsMenu(void);
     void drawIcon(float scale);

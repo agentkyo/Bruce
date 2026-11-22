@@ -5,7 +5,7 @@
 
 class ClockMenu : public MenuItemInterface {
 public:
-    ClockMenu() : MenuItemInterface("Clock") {}
+    ClockMenu() : MenuItemInterface("Relogio") {}
 
     void optionsMenu(void);
     void showSubMenu(void);

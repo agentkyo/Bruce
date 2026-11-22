@@ -5,7 +5,7 @@
 
 class WireToolsMenu : public MenuItemInterface {
 public:
-    WireToolsMenu() : MenuItemInterface("Wire Tools") {}
+    WireToolsMenu() : MenuItemInterface("Fio/I2C") {}
 
     void optionsMenu(void);
     void drawIcon(float scale);
