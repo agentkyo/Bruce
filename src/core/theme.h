@@ -3,8 +3,9 @@
 #include "sd_functions.h"
 #include <ArduinoJson.h>
 
-#define DEFAULT_PRICOLOR 0xA80F
-#define DEFAULT_SECCOLOR 0xCB76
+// Agent Smith theme: Matrix phosphor green (was Bruce purple 0xA80F / 0xCB76).
+#define DEFAULT_PRICOLOR 0x07E8
+#define DEFAULT_SECCOLOR 0x05C0
 
 struct themeFiles {
     String wifi = "";
@@ -66,7 +67,7 @@ public:
 
     // Theme colors in RGB565 format
     uint16_t priColor = DEFAULT_PRICOLOR;
-    uint16_t secColor = DEFAULT_PRICOLOR - 0x2000;
+    uint16_t secColor = 0x0520;  // darker Matrix green accent
     uint16_t bgColor = 0x0000;
 
     // UI Color

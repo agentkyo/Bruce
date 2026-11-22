@@ -1302,7 +1302,7 @@ void drawStatusBar() {
         tft.print(timeStr);
     } else {
         setTftDisplay(BORDER_PAD_X, BORDER_PAD_X, bruceConfig.priColor, FP, bruceConfig.bgColor);
-        tft.print("BRUCE " + String(BRUCE_VERSION));
+        tft.print("AGENT SMITH");
     }
 
     int iconCount = 0;

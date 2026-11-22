@@ -44,6 +44,26 @@ if mcu != "esp32p4" and not isfile(patchflag_path):
             objcopy = candidate
             break
     if not objcopy:
+        # Fallback 1: derive objcopy from the active compiler. On recent
+        # pioarduino the toolchain package is a manifest only, so the lookups
+        # above miss the real binaries, which still sit next to $CC.
+        cc = env.subst("$CC")
+        if cc:
+            for suffix in ("-gcc", "-g++", "-cc"):
+                guess = cc.replace(suffix, "-objcopy")
+                if guess != cc and isfile(guess):
+                    objcopy = guess
+                    break
+    if not objcopy:
+        # Fallback 2: glob the shared PlatformIO packages directory for any
+        # installed xtensa objcopy (works even when it belongs to another
+        # platform install sharing ~/.platformio/packages).
+        packages_dir = dirname(FRAMEWORK_DIR)
+        for hit in sorted(glob.glob(join(packages_dir, "toolchain-xtensa*", "bin",
+                                         "xtensa-*-objcopy*"))):
+            objcopy = hit
+            break
+    if not objcopy:
         raise RuntimeError("Cannot find the installed ESP32 objcopy tool")
     subprocess.run([objcopy, "--weaken-symbol=ieee80211_raw_frame_sanity_check",
                     original_file, patched_file], check=True)

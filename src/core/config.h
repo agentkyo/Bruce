@@ -43,7 +43,7 @@ public:
         bool allowGetCreds;
     };
 
-    const char *filepath = "/bruce.conf";
+    const char *filepath = "/agentsmith.conf";  // was /bruce.conf: ignore leftover Bruce config
 
     //  Settings
     int dimmerSet = 60;
